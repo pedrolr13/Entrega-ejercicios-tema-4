@@ -1,0 +1,63 @@
+package Herencia;
+
+public class Main {
+    public static void main(String[] args) {
+     SmartDevice smartDevice=new SmartDevice(50,50,32,64,"4K","LCD");
+        System.out.println(smartDevice.ramMemory);
+     SmartWatch smartWatch=new SmartWatch(4,6,4,8,"HD","LCD","Samsung");
+        System.out.println(smartWatch.Brand);
+     SmartPhone smartPhone=new SmartPhone(7,18,6,128,"FullHD","TFT","Apple",true);
+        System.out.println(smartPhone.resolution);
+    }
+
+}
+
+public class SmartDevice {
+    int widthSize;
+    int heightSize;
+    int ramMemory;
+    int internMemory;
+    String resolution;
+    String screen;
+
+    public SmartDevice(int widthSize,int heightSize,int ramMemory, int internMemory,String resolution,String screen) {
+        this.widthSize = widthSize;
+        this.heightSize = heightSize;
+        this.ramMemory = ramMemory;
+        this.internMemory = internMemory;
+        this.screen = screen;
+        this.resolution = resolution;
+
+    }
+
+
+}
+
+
+public class SmartWatch extends SmartDevice{
+
+    String Brand="Samsung";
+
+    public SmartWatch(int widthSize, int heightSize, int ramMemory, int internMemory, String resolution, String screen, String brand) {
+        super(widthSize, heightSize, ramMemory, internMemory, resolution, screen);
+        this.Brand = brand;
+    }
+
+
+
+}
+
+public class SmartPhone extends SmartWatch{
+
+    boolean canCall;
+
+    public SmartPhone(int widthSize, int heightSize, int ramMemory, int internMemory, String resolution, String screen, String brand, boolean canCall) {
+        super(widthSize, heightSize, ramMemory, internMemory, resolution, screen, brand);
+        this.canCall = canCall;
+    }
+
+
+
+}
+
+
